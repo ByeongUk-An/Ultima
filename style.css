@@ -1,0 +1,330 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: Avenir;
+  src: url(./aseets/font/Avenir\ Roman.otf);
+}
+
+@font-face {
+  font-family: IvyMode;
+  src: url(./aseets/font/IvyMode-Light.woff);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Avenir', 'Go';
+  font-size: 16px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+}
+
+ul,
+li {
+  list-style: none;
+  border: none;
+}
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Custom CSS */
+
+.wrapper {
+  width: 100%;
+}
+
+header {
+  max-width: 1300px;
+  width: 1300px;
+  height: 110px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 100;
+}
+
+.drop-menu-wrap {
+  height: 100%;
+  line-height: 110px;
+  vertical-align: top;
+  border-bottom: 1px solid #fff;
+}
+
+.hambuger {
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.lang {
+  color: #fff;
+  padding-left: 60px;
+  position: relative;
+  top: -5px;
+  cursor: pointer;
+}
+.lang:hover .fa-angle-down {
+  transform: translateY(5px);
+  transition: 0.5s;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.enquire-btn {
+  margin-top: 33px;
+  color: #fff;
+  float: right;
+  padding: 15px 20px;
+  border: 1px solid hsla(0, 0%, 100%, 0.2);
+  cursor: pointer;
+}
+.enquire-btn:hover {
+  border-color: #b89435;
+  color: #b89435;
+}
+.enquire-text {
+  margin-left: 35px;
+  position: relative;
+  top: -2px;
+}
+.enquire-btn:hover svg path {
+  stroke: #b89435;
+  transition: 0.5s;
+  transform: translateX(2px);
+}
+
+.cover__video {
+  position: relative;
+  width: 100%;
+  top: -110px;
+  z-index: -100;
+}
+.cover__video video {
+  width: 100%;
+}
+.cover__video h2 {
+  display: inline;
+  font-family: 'IvyMode';
+  font-weight: 300;
+  position: absolute;
+  top: 50%;
+  left: 47%;
+  font-size: 70px;
+  color: #fff;
+  transform: translate(-50%, -47%);
+}
+.title-wrap {
+  max-width: 1300px;
+  width: 1300px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.title {
+  width: 50%;
+  height: 470px;
+  float: left;
+  font-family: 'IvyMode';
+  color: #b89535;
+}
+.blank {
+  width: 50%;
+
+  background-color: transparent;
+  float: left;
+}
+
+.title .title-head h2 {
+  font-size: 56px;
+  font-weight: 300;
+}
+.title .title-head h2 b {
+  color: #4a4a49;
+}
+.title-text {
+  margin-top: 50px;
+  font-family: Avenir;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: #4a4a49;
+}
+.img-list-wrap {
+  max-width: 1300px;
+  width: 1300px;
+  height: 600px;
+  background-color: #fff;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.img-item {
+  width: calc(100% / 3 - 90px);
+  height: 600px;
+  float: left;
+  margin-right: 135px;
+}
+.img-item:last-child {
+  margin-right: 0;
+}
+
+.img-item img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+}
+
+.img-item h3 {
+  font-family: IvyMode;
+  color: #484848;
+  font-size: 24px;
+  padding: 20px 0;
+}
+.img-item p {
+  font-family: Avenir;
+  color: #4a4a49;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5em;
+}

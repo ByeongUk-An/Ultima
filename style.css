@@ -401,6 +401,7 @@ header {
 
 /* Swiper */
 .mySwiper {
+  display: block;
   padding-bottom: 100px;
 }
 .swiper {

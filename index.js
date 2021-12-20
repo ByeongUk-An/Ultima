@@ -1,7 +1,7 @@
 var swiper = new Swiper('.mySwiper', {
   spaceBetween: 50,
-  loopFillGroupWithBlank: true,
-  loop: true,
+  loop: false,
+  slidesPerView: 2.2,
   pagination: {
     el: '.swiper-pagination',
     type: 'progressbar',
@@ -10,14 +10,11 @@ var swiper = new Swiper('.mySwiper', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-  observer: true,
-  observeParents: true,
 });
 
 var swiper = new Swiper('.mySwiper1', {
   spaceBetween: 50,
-  loopFillGroupWithBlank: true,
-  loop: true,
+  slidesPerView: 2.2,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -26,8 +23,7 @@ var swiper = new Swiper('.mySwiper1', {
 
 var swiper = new Swiper('.mySwiper2', {
   spaceBetween: 50,
-  // loop: true,
-  // loopFillGroupWithBlank: true,
+  slidesPerView: 4.1,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',

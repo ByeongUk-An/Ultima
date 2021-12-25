@@ -83,6 +83,7 @@
 
 .sc_lineup {
   background: #f0ebe5;
+  overflow: hidden;
 }
 .sc_lineup .title_wrap h2 {
   font-size: 56px;
@@ -260,6 +261,7 @@
 .sc_preview {
   background: #fff;
   position: relative;
+  overflow: hidden;
 }
 .sc_preview .title_wrap {
 }
@@ -360,6 +362,7 @@
 
 .sc_contact {
   background: #f9f7f7;
+  overflow: hidden;
 }
 .sc_contact .title_wrap {
   color: #4a4a49;

@@ -100,20 +100,20 @@ $(function () {
   });
 
   // text
-  // const headTxt = new SplitType('.sc_collection h2', { types: 'words, chars' });
-  // // headTxt.chars
-  // gsap.from(headTxt.chars, {
-  //   scrollTrigger: {
-  //     trigger: '.sc_collection',
-  //     start: '-800', //트리거 기준잡은 엘리먼트 //윈도우기준
-  //     end: 'top top',
-  //     // markers: true,
-  //   },
-  //   yPercent: 20,
-  //   duration: 0.5,
-  //   opacity: 0,
-  //   stagger: 0.04,
-  // });
+  const headTxt = new SplitType('.sc_collection h2', { types: 'words, chars' });
+  // headTxt.chars
+  gsap.from(headTxt.chars, {
+    scrollTrigger: {
+      trigger: '.sc_collection',
+      start: '-800', //트리거 기준잡은 엘리먼트 //윈도우기준
+      end: 'top top',
+      // markers: true,
+    },
+    yPercent: 20,
+    duration: 0.5,
+    opacity: 0,
+    stagger: 0.04,
+  });
 
   const headTl = gsap.timeline({
     defaults: {},
@@ -128,34 +128,11 @@ $(function () {
     .from('header .logo', { opacity: 0 })
     .from('header .enquire', { opacity: 0 });
 
-  $('.lang_box').click(function () {
-    const langEl = $('.lang_box');
-    gsap.from(langEl, {
-      yPercent: 40,
-      duration: 1,
-      stagger: 0.1,
-      opacity: 0,
-    });
-  });
-
   $('.sc_collection').each(function (index, item) {
     const motionEl = $(this).find('.content');
-    const triggerEl = $(this).find('h2');
-    // const headTxtWrap = new SplitType('.sc_collection .txt_box', {
-    //   types: 'words, chars',
-    // });
-    const headTxtWrap = $(this).find('.txt_box');
-    gsap.from(triggerEl, {
-      scrollTrigger: {
-        trigger: '.sc_collection',
-        start: '-800',
-        end: 'top top',
-        // markers: true,
-      },
-      xPercent: -20,
-      duration: 1,
-      stagger: 0.1,
-      opacity: 0,
+    const triggerEl = $(this).find('.txt_box');
+    const headTxtWrap = new SplitType('.sc_collection .txt_box', {
+      types: 'words, chars',
     });
     gsap.from(motionEl, {
       scrollTrigger: {
@@ -170,28 +147,16 @@ $(function () {
       opacity: 0,
     });
 
-    // gsap.from(headTxtWrap.words, {
-    //   scrollTrigger: {
-    //     trigger: '.sc_collection',
-    //     start: '-800',
-    //     end: 'top top',
-    //   },
-    //   yPercent: 20,
-    //   duration: 0.5,
-    //   opacity: 0,
-    //   stagger: 0.04,
-    // });
-    gsap.from(headTxtWrap, {
+    gsap.from(headTxtWrap.words, {
       scrollTrigger: {
         trigger: '.sc_collection',
-        start: '-800', //트리거 기준잡은 엘리먼트 //윈도우기준
+        start: '-800',
         end: 'top top',
-        // markers: true,
       },
-      xPercent: -20,
-      duration: 1,
-      stagger: 0.1,
+      yPercent: 20,
+      duration: 0.5,
       opacity: 0,
+      stagger: 0.04,
     });
   });
 
@@ -274,7 +239,7 @@ $(function () {
       yPercent: -200,
       duration: 1,
       stagger: 0.1,
-      // markers: true,
+      markers: true,
     });
   });
   $('.sc_preview').each(function (index, item) {
@@ -286,7 +251,7 @@ $(function () {
         trigger: '.sc_preview',
         start: '-800',
         end: 'top top',
-        // markers: true,
+        markers: true,
       },
       xPercent: -20,
       duration: 1,
@@ -299,7 +264,7 @@ $(function () {
         trigger: '.sc_preview',
         start: '-600',
         end: 'top top',
-        // markers: true,
+        markers: true,
       },
       yPercent: 100,
       duration: 1,
@@ -311,7 +276,7 @@ $(function () {
         trigger: '.sc_preview',
         start: '-600',
         end: 'top top',
-        // markers: true,
+        markers: true,
       },
       yPercent: 200,
       duration: 2,
@@ -321,41 +286,15 @@ $(function () {
   });
   $('.sc_contact').each(function (index, item) {
     const contactTitleEl = $(this).find('.title_wrap');
-    const contactPartnerTxtEl = $(this).find('.partner_list h2');
-    const contactPartnerSlideEl = $(this).find('.swiper-slide');
 
     gsap.from(contactTitleEl, {
       scrollTrigger: {
-        trigger: '.sc_contact',
-        start: '-800',
+        trigger: 'sc_contact',
+        start: '-500',
         end: 'top top',
-        // markers: true,
+        markers: true,
       },
-      xPercent: -40,
-      duration: 1,
-      stagger: 0.1,
-      opacity: 0,
-    });
-    gsap.from(contactPartnerTxtEl, {
-      scrollTrigger: {
-        trigger: '.sc_contact',
-        start: '-800',
-        end: 'top top',
-        // markers: true,
-      },
-      xPercent: -40,
-      duration: 1,
-      stagger: 0.1,
-      opacity: 0,
-    });
-    gsap.from(contactPartnerSlideEl, {
-      scrollTrigger: {
-        trigger: '.sc_contact',
-        start: '-800',
-        end: 'top top',
-        // markers: true,
-      },
-      yPercent: 80,
+      xPercent: -20,
       duration: 1,
       stagger: 0.1,
       opacity: 0,

@@ -1,0 +1,565 @@
+@import './reset.css';
+@import './common.css';
+/* body */
+body {
+  font-family: 'Avenir, serif';
+  min-width: 1450px;
+}
+/* header */
+.line-top {
+  animation: line-top 0.5s forwards ease-out,
+    line-top-rotate 0.3s 0.5s forwards ease-out;
+}
+
+.line-mid {
+  animation: line-mid 0.5s forwards ease-out;
+}
+
+/* 추가된 부분 */
+.line-bot {
+  animation: line-bot 0.5s forwards ease-out,
+    line-bot-rotate 0.3s 0.5s forwards ease-out;
+}
+
+@keyframes line-top {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(13px);
+  }
+}
+
+/* 추가된 부분 */
+@keyframes line-top-rotate {
+  0% {
+    transform: translateY(13px) rotateZ(0deg);
+  }
+  100% {
+    transform: translateY(13px) rotateZ(45deg);
+  }
+}
+
+@keyframes line-mid {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes line-bot {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-13px);
+  }
+}
+
+/* 추가된 부분 */
+@keyframes line-bot-rotate {
+  0% {
+    transform: translateY(-13px) rotateZ(0deg);
+  }
+  100% {
+    transform: translateY(-7.6px) rotateZ(135deg);
+  }
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 4;
+  color: #fff;
+}
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: #fff;
+}
+header.white {
+  color: #000;
+}
+header.white::before {
+  height: 100px;
+}
+
+header .inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  height: 100px;
+  /* line-height: 100px; */
+}
+
+header h1 {
+  width: 160px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(../images/ultima-logo.svg);
+}
+header.white h1 svg path {
+  fill: #000;
+}
+header h1 a {
+  display: block;
+  height: 100%;
+}
+header .util_wrap {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  /* height: 100px; */
+  overflow: hidden;
+  font-family: IvyMode;
+}
+header .util_wrap .menu_btn {
+  float: left;
+  width: 50px;
+  height: 100%;
+  /* height: 50px; */
+  margin-right: 55px;
+}
+header .util_wrap .menu_btn .line {
+  display: block;
+  width: 50%;
+  height: 2px;
+  background-color: #fff;
+  margin-bottom: 8px;
+}
+header.white .util_wrap .menu_btn .line {
+  background-color: #000;
+}
+header .util_wrap .menu_btn .line:last-child {
+  margin-bottom: 0;
+}
+
+header .util_wrap .lang_box {
+  float: left;
+  width: 130px;
+  height: 30px;
+  line-height: 25px;
+}
+header .util_wrap .curr_lang {
+  display: block;
+}
+header .util_wrap.active .curr_lang {
+  display: none;
+}
+header .util_wrap .curr_lang span {
+  margin-right: 5px;
+}
+header .util_wrap .curr_lang i {
+  transition: 0.5s;
+}
+header .util_wrap:hover .curr_lang i {
+  transform: translateY(5px);
+}
+header .util_wrap .lang_list {
+  /* font-size: 0; */
+  overflow: hidden;
+  display: none;
+}
+header .util_wrap .lang_list li {
+  float: left;
+  margin-right: 10px;
+  font-size: 15px;
+  border-bottom: 1px solid #fff;
+}
+header .util_wrap.active .lang_list {
+  display: block;
+}
+
+header .enquire {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 192px;
+  height: 50px;
+  padding: 16px 5px 15px;
+  transform: translateY(-50%);
+  border: 1px solid #fff;
+  text-align: center;
+}
+header .enquire:hover {
+  border: 1px solid #b89535;
+}
+header.white .enquire {
+  border: 1px solid #000;
+}
+header .enquire span {
+  transition: 0.5s;
+}
+header .enquire:hover span {
+  display: inline-block;
+  transform: translateX(12px);
+  color: #b89535;
+}
+header.white .enquire:hover {
+  border: 1px solid #b89535;
+}
+header .enquire span::before {
+  display: inline-block;
+  content: '\e907';
+  font-family: xeicon;
+  margin-right: 20px;
+}
+/* header menu */
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1d1d1d;
+  overflow: hidden;
+  z-index: -1;
+  display: none;
+}
+.menu nav {
+  width: 1400px;
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-top: 232px;
+}
+.menu ul {
+}
+.menu ul li {
+  font-size: 32px;
+  font-family: IvyMode;
+  font-weight: 300;
+  margin-bottom: 30px;
+  width: 340px;
+}
+.menu_list_item::before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 2px;
+  background-color: #b89535;
+  position: relative;
+  top: -11px;
+  transition: 0.5s;
+}
+.menu_list_item:hover {
+  color: #b89535;
+}
+.menu_list_item:hover::before {
+  width: 55px;
+}
+
+.menu ul > li:hover {
+}
+.menu ul li a {
+}
+.menu ul li .txt_wrap {
+  display: none;
+  font-size: 16px;
+  margin-top: 15px;
+  font-family: Avenir;
+  padding-left: 10px;
+  color: #fff;
+}
+.menu ul li.hov .txt_wrap {
+  display: block;
+}
+.menu ul li .txt_wrap li:hover {
+  color: #b89535;
+}
+.menu ul li .txt_wrap::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.menu ul li .txt_wrap li {
+  display: inline;
+  width: 50px;
+  font-size: 16px;
+  font-family: Avenir;
+  margin-right: 20px;
+  margin-bottom: 0;
+}
+.menu ul li .txt_wrap li:last-child {
+  margin-right: 0;
+}
+.menu ul li .img_wrap {
+  position: absolute;
+  left: 595px;
+  top: 225px;
+  width: 657px;
+  /* height: 735px; */
+  /* height: 0; */
+}
+.menu ul li .img_wrap img {
+  display: none;
+  width: 657px;
+  height: 735px;
+  /* height: 0; */
+}
+.menu ul li.hov .img_wrap img {
+  display: block;
+}
+
+header .bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+}
+
+/* footer  */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #212121;
+  color: #fff;
+  width: 100%;
+  height: 800px;
+  z-index: 0;
+  overflow: hidden;
+}
+footer.show {
+  z-index: 2;
+}
+footer .inner {
+  width: 1200px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 70px;
+}
+footer .inner h2 {
+  background-image: url(../images/ultima-logo.svg);
+  display: inline-block;
+  width: 162px;
+  height: 48px;
+  background-size: contain;
+  margin-bottom: 55px;
+}
+.footer-nav {
+  padding: 45px 0;
+  border-top: 1px solid #373737;
+  border-bottom: 1px solid #373737;
+  margin-bottom: 70px;
+}
+.footer-nav a {
+  font-size: 20px;
+  font-family: IvyMode;
+  margin-right: 155px;
+}
+.footer-nav .nav-lastchild {
+  margin-right: 0;
+}
+.subscribe {
+  height: 340px;
+  border-bottom: 1px solid #373737;
+}
+.subscribe .title {
+  font-size: 20px;
+  font-family: IvyMode;
+  margin-bottom: 28px;
+}
+.subscribe form {
+  width: 448px;
+  height: 126px;
+}
+.subscribe .wrap {
+  width: 100%;
+  height: 63px;
+  color: #fff;
+}
+.subscribe .wrap .label_wrap::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.subscribe .wrap .label_wrap label {
+  display: block;
+  width: 50%;
+  height: 63px;
+  color: #fff;
+  float: left;
+  border: 1px solid #373737;
+  border-collapse: collapse;
+  cursor: pointer;
+}
+.subscribe .wrap .label_wrap label input {
+  width: 100%;
+  height: 63px;
+  background-color: #212121;
+  position: relative;
+  z-index: -1;
+  top: -16px;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+.subscribe .wrap .label_wrap label span {
+  position: relative;
+  top: 22px;
+  left: 10%;
+  color: #fff;
+  font-size: 12px;
+  transition: 0.5s;
+}
+.subscribe .wrap .name_label:focus-within .move_txt {
+  top: 5px;
+  font-size: 10px;
+}
+.subscribe .wrap .surname_label:focus-within .move_txt {
+  top: 5px;
+  font-size: 10px;
+}
+.subscribe .wrap .email_wrap label {
+  display: block;
+  width: 100%;
+  height: 63px;
+  color: #fff;
+  border: 1px solid #373737;
+  border-collapse: collapse;
+  cursor: pointer;
+}
+.subscribe .wrap .email_wrap label input {
+  width: 100%;
+  height: 63px;
+  background-color: #212121;
+  position: relative;
+  z-index: -1;
+  top: -16px;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+.subscribe .wrap .email_wrap label span {
+  position: relative;
+  top: 42%;
+  left: 5%;
+  color: #fff;
+  font-size: 12px;
+  transition: 0.5s;
+}
+.subscribe .wrap .email_label:focus-within .move_txt {
+  top: 5px;
+  font-size: 10px;
+}
+.subscribe .email_wrap {
+  position: relative;
+}
+.subscribe .email_wrap button {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  display: inline-block;
+  transform: translateY(-50%);
+  background-color: #212121;
+  color: #b89535;
+  font-size: 12px;
+  cursor: pointer;
+  z-index: 2;
+  transition: 0.5s;
+}
+
+.subscribe .email_wrap button:hover {
+  right: 10px;
+}
+.subscribe .email_wrap button span::before {
+  display: inline-block;
+  content: '\e907';
+  font-family: xeicon;
+  margin-right: 15px;
+}
+.subscribe .contact {
+  position: absolute;
+  top: 424px;
+  right: 158px;
+  width: 448px;
+  height: 281px;
+  text-align: right;
+}
+.subscribe .contact h3 {
+  font-size: 20px;
+  font-family: IvyMode;
+}
+
+.subscribe .contact .tell {
+  display: inline-block;
+  font-size: 16px;
+  padding: 18px 0;
+}
+.subscribe .contact .email {
+  display: block;
+  color: #b89535;
+  line-height: 1.6;
+}
+.subscribe .contact .tell span,
+.subscribe .contact .email span {
+  text-decoration: underline;
+}
+
+.subscribe .contact .sns_wrap {
+  overflow: hidden;
+  position: relative;
+  top: 60px;
+  right: 0;
+  float: right;
+}
+.subscribe .contact .sns_wrap a {
+  display: block;
+  float: left;
+  width: 64px;
+  height: 64px;
+  border: 1px solid #373737;
+  color: #fff;
+}
+.subscribe .contact .sns_wrap i {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.subscribe .contact .sns_wrap .sns01 {
+  background-image: url(../images/instagram.svg);
+}
+.subscribe .contact .sns_wrap .sns02 {
+  background-image: url(../images/linkedin.svg);
+}
+.subscribe .contact .sns_wrap .sns03 {
+  background-image: url(../images/facebook.svg);
+}
+.subscribe .contact .sns_wrap .sns04 {
+  background-image: url(../images/youtube.svg);
+}
+
+.footer-made {
+  padding-top: 45px;
+  font-size: 12px;
+}
+.footer-made .copy {
+  float: left;
+}
+.footer-made .copy span {
+  color: #b89535;
+}
+.footer-made .privacy {
+  float: right;
+  color: #fff;
+  opacity: 0.3;
+}

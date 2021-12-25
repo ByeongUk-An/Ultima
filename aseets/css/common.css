@@ -1,0 +1,127 @@
+@font-face {
+  font-family: Avenir;
+  src: url(../font/Avenir\ Roman.otf);
+}
+
+@font-face {
+  font-family: IvyMode;
+  src: url(../font/IvyMode-Light.woff);
+}
+
+.blind {
+  /* position: absolute;
+  top: -9999px;
+  left: -9999px; */
+
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  clip: rect(0 0 0 0); /* 클리핑마스크*/
+}
+
+.section {
+  padding: 128px 0;
+}
+.section .title_wrap {
+  max-width: 1300px;
+  margin: 0 auto 60px;
+}
+.section .title_wrap h2 {
+  font-size: 56px;
+  line-height: 1.2;
+  font-family: IvyMode;
+}
+
+.section .group_list {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.section .group_list::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.section .group_list .content {
+  float: left;
+  width: calc((100% - 120px) / 3);
+  margin-right: 60px;
+}
+.section .group_list .content:last-child {
+  margin-right: 0;
+}
+.section .group_list .content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.btnlink_wrap {
+  max-width: 1300px;
+  margin: 60px auto 0;
+  height: 66px;
+  position: relative;
+  left: -70px;
+}
+.sc_service .btnlink_wrap {
+  margin: 40px auto 0;
+}
+.btnlink_wrap::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+.btnlink_wrap .more {
+  float: right;
+  font-size: 16px;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btnlink_wrap .more .arr {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  left: -120px;
+}
+.btnlink_wrap .more .arr::before {
+  position: absolute;
+  content: '';
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid #4a4a49;
+  line-height: 64px;
+}
+.btnlink_wrap .more i::after {
+  content: '\e907';
+  font-family: xeicon;
+  font-size: 16px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+}
+.btnlink_wrap .more span {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 90px;
+  transform: translateY(-50%);
+}
+
+.btnlink_wrap .more:hover {
+  transform: translateX(10px);
+}
+.btnlink_wrap .more:hover i::after {
+  font-size: 24px;
+}
+.btn_wrap .prev,
+.btn_wrap .next {
+  cursor: pointer;
+}
+
+/*  */
